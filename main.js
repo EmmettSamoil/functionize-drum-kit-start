@@ -9,58 +9,31 @@ function playSound(event) {
 
     if (event.keyCode == 65) { // "a"
         // Play A-Clap
-        let audio = document.getElementById("clap");
-        audio.currentTime = 0;
-        audio.play();
-        document.getElementById("A").classList.add("playing");
+        playNoise('clap', 'A')
     } else if (event.keyCode == 83) { // "s"
         // Play S-hihat
-        let audio = document.getElementById("hihat");
-        audio.currentTime = 0;
-        audio.play();
-        document.getElementById("S").classList.add("playing");
+        playNoise('hihat', 'S')
     } else if (event.keyCode == 68) { // "d"
         // Play D-kick
-        let audio = document.getElementById("kick");
-        audio.currentTime = 0;
-        audio.play();
-        document.getElementById("D").classList.add("playing");
+        playNoise('kick', 'D')
     } else if (event.keyCode == 70) { // "f"
         // Play F-Openhat
-        let audio = document.getElementById("openhat");
-        audio.currentTime = 0;
-        audio.play();
-        document.getElementById("F").classList.add("playing");
+        playNoise('openhat', 'f')
     } else if (event.keyCode == 71) { // "g"
         // Play G-Boom
-        let audio = document.getElementById("boom");
-        audio.currentTime = 0;
-        audio.play();
-        document.getElementById("G").classList.add("playing");
+        playNoise('boom', 'G')
     } else if (event.keyCode == 72) { // "h"
         // Play H-Ride
-        let audio = document.getElementById("ride");
-        audio.currentTime = 0;
-        audio.play();
-        document.getElementById("H").classList.add("playing");
+        playNoise('ride', 'H')
     } else if (event.keyCode == 74) { // "j"
         // Play J-Snare
-        let audio = document.getElementById("snare");
-        audio.currentTime = 0;
-        audio.play();
-        document.getElementById("J").classList.add("playing");
+        playNoise('snare', 'J')
     } else if (event.keyCode == 75) { // "k"
         // Play K-Tom
-        let audio = document.getElementById("tom");
-        audio.currentTime = 0;
-        audio.play();
-        document.getElementById("K").classList.add("playing");
+        playNoise('tom', 'K')
     } else if (event.keyCode == 76) { // "l"
         // Play L-Tink
-        let audio = document.getElementById("tink");
-        audio.currentTime = 0;
-        audio.play();
-        document.getElementById("L").classList.add("playing");
+       playNoise('tink', 'L')
     }
 }
 
@@ -78,4 +51,11 @@ document.getElementById('L').addEventListener('transitionend', removePlaying);
 // Transition End FUnction
 function removePlaying(event) {
     event.target.classList.remove("playing");
+}
+
+function playNoise (n1, k1) {
+    let audio = document.getElementById(n1);
+        audio.currentTime = 0;
+        audio.play();
+        document.getElementById(k1).classList.add("playing");
 }
